@@ -1,0 +1,38 @@
+# The environment is offline, so no new packages can be installed. The entries below are
+# the libraries already present in the environment and importable as-is.
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "yuyao-agent"
+version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = [
+    "litellm==1.95.0",
+    "openai==2.53.0",
+    "httpx==0.28.1",
+    "requests==2.34.2",
+    "aiohttp==3.14.3",
+    "rich==15.0.0",
+    "textual==8.2.8",
+    "prompt_toolkit==3.0.53",
+    "Pygments==2.20.0",
+    "typer==0.27.1",
+    "click==8.4.2",
+    "pydantic==2.13.4",
+    "PyYAML==6.0.3",
+    "Jinja2==3.1.6",
+    "jsonschema==4.26.0",
+    "tenacity==9.1.4",
+    "tiktoken==0.13.0",
+    "python-dotenv==1.2.2",
+    "tqdm==4.70.0",
+]
+
+[project.scripts]
+yuyao = "yuyao.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

@@ -1,0 +1,19 @@
+format = "doc2harness.catalog-shard-source/1"
+function_id = "state"
+resource = "benchmark/harnesses/state/catalog.toml"
+exports = [
+  { module = "doc2harness.benchmark.harnesses.state.scenarios.agent_api_close_retry_incomplete", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.state.scenarios.agent_api_close_retry_incomplete_control", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.state.scenarios.child_add_dir_inheritance", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.state.scenarios.child_add_dir_inheritance_control", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.state.scenarios.copy_utf8_clipboard_bytes", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.state.scenarios.copy_utf8_clipboard_control", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.state.scenarios.custom_args_no_secondary_expansion", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.state.scenarios.custom_args_single_expansion_control", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.state.scenarios.memory_query_topk_residency", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.state.scenarios.memory_query_topk_residency_control", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.state.scenarios.p30_ctl_security_review_sees_worktree_change", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.state.scenarios.plugin_declared_command_reaches_wire", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.state.scenarios.plugin_toplevel_command_control", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.state.scenarios.security_review_covers_branch_commits", export = "definition" },
+]

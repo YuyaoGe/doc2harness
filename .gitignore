@@ -1,0 +1,12 @@
+.venv/
+build/
+dist/
+*.egg-info/
+__pycache__/
+.pytest_cache/
+run-results/
+
+# stage1 local build outputs and artifact registry: large, and they contain
+# products emitted by the model under test, so they stay out of the repository.
+/results/
+/artifacts_store/

@@ -1,0 +1,56 @@
+"""Public headless CLI Harness surface."""
+
+from .adapter import (
+    HeadlessExecutionPlan,
+    build_headless_execution_plan,
+)
+from .contracts import (
+    ArgumentVariant,
+    CliFileProbe,
+    FormalProbe,
+    HeadlessApplicability,
+    HeadlessExecutionMode,
+    HeadlessJudgement,
+    HeadlessObservation,
+    HeadlessOutcome,
+    HeadlessProfile,
+    HeadlessRecipe,
+    HeadlessScenario,
+    JsonOverride,
+    ListingProbe,
+    ObservedFile,
+    ProcessObservation,
+    RequestRecord,
+    SchemaProbe,
+    SeedFile,
+    ToolCall,
+    ToolRound,
+)
+from .recipes import SCENARIOS, scenario_by_id
+
+__all__ = [
+    "SCENARIOS",
+    "ArgumentVariant",
+    "CliFileProbe",
+    "FormalProbe",
+    "HeadlessApplicability",
+    "HeadlessExecutionMode",
+    "HeadlessExecutionPlan",
+    "HeadlessJudgement",
+    "HeadlessObservation",
+    "HeadlessOutcome",
+    "HeadlessProfile",
+    "HeadlessRecipe",
+    "HeadlessScenario",
+    "JsonOverride",
+    "ListingProbe",
+    "ObservedFile",
+    "ProcessObservation",
+    "RequestRecord",
+    "SchemaProbe",
+    "SeedFile",
+    "ToolCall",
+    "ToolRound",
+    "build_headless_execution_plan",
+    "scenario_by_id",
+]

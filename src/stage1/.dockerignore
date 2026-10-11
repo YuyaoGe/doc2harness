@@ -1,0 +1,7 @@
+# docker build context = src/stage1. The builder image needs only f0_clean/; everything
+# else is evaluation/spec material and stays out of the image.
+*
+!f0_clean
+!f0_clean/**
+**/__pycache__
+**/*.pyc

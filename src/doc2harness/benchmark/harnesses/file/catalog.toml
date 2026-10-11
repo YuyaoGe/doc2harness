@@ -1,0 +1,22 @@
+format = "doc2harness.catalog-shard-source/1"
+function_id = "file"
+resource = "benchmark/harnesses/file/catalog.toml"
+exports = [
+  { module = "doc2harness.benchmark.harnesses.file.scenarios.file_symlink_inside_still_readable_control", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.file.scenarios.glob_finds_inside_control", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.file.scenarios.glob_truncation_keeps_sorted_end", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.file.scenarios.grep_default_mode_returns_path_control", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.file.scenarios.grep_finds_needle_control", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.file.scenarios.grep_head_limit_zero_not_unlimited", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.file.scenarios.grep_type_filter_ignored", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.file.scenarios.memory_get_abs_path_escapes_workspace", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.file.scenarios.notebook_edit_cell_isolation", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.file.scenarios.notebook_edit_delete_keeps_neighbors", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.file.scenarios.p32_ctl_memory_get_reads_inside_workspace", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.file.scenarios.read_char_device_bounded", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.file.scenarios.read_regular_file_control", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.file.scenarios.read_via_symlink_outside_workspace_bounded", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.file.scenarios.rewind_restores_edited_file", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.file.scenarios.symlink_to_outside_target_readable_control", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.file.scenarios.undo_reverts_overwrite_control", export = "definition" },
+]

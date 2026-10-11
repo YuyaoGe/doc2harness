@@ -1,0 +1,12 @@
+format = "doc2harness.catalog-shard-source/1"
+function_id = "artifact"
+resource = "benchmark/harnesses/artifact/catalog.toml"
+exports = [
+  { module = "doc2harness.benchmark.harnesses.artifact.scenarios.artifact_declares_dependencies", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.artifact.scenarios.artifact_has_entry_py", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.artifact.scenarios.artifact_has_install_sh", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.artifact.scenarios.artifact_has_offline_wheel", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.artifact.scenarios.artifact_has_requirements_lock", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.artifact.scenarios.artifact_has_run_agent_sh", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.artifact.scenarios.artifact_has_version_file", export = "definition" },
+]

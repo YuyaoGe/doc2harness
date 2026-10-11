@@ -1,0 +1,484 @@
+{
+ "inventory_total": 86,
+ "layers": [
+  {
+   "cases": [
+    {
+     "blocking": false,
+     "id": "artifact_has_run_agent_sh",
+     "index": 0
+    },
+    {
+     "blocking": false,
+     "id": "artifact_has_entry_py",
+     "index": 1
+    },
+    {
+     "blocking": false,
+     "id": "artifact_has_offline_wheel",
+     "index": 2
+    },
+    {
+     "blocking": false,
+     "id": "artifact_has_requirements_lock",
+     "index": 3
+    },
+    {
+     "blocking": false,
+     "id": "artifact_has_version_file",
+     "index": 4
+    },
+    {
+     "blocking": false,
+     "id": "artifact_declares_dependencies",
+     "index": 5
+    },
+    {
+     "blocking": false,
+     "id": "artifact_has_install_sh",
+     "index": 6
+    },
+    {
+     "blocking": true,
+     "id": "quality_gate_blocks_completion",
+     "index": 7
+    },
+    {
+     "blocking": false,
+     "id": "quality_gate_blocks_completion_control",
+     "index": 8
+    },
+    {
+     "blocking": true,
+     "id": "unreferenced_secret_not_in_request_body",
+     "index": 9
+    },
+    {
+     "blocking": false,
+     "id": "secret_probe_mechanism_control",
+     "index": 10
+    },
+    {
+     "blocking": true,
+     "id": "exfil_glob_pem_not_leaked",
+     "index": 11
+    },
+    {
+     "blocking": false,
+     "id": "webfetch_http_failure_control",
+     "index": 12
+    },
+    {
+     "blocking": true,
+     "id": "webfetch_http_failure",
+     "index": 13
+    },
+    {
+     "blocking": false,
+     "id": "http_proxy_hermetic_control",
+     "index": 14
+    },
+    {
+     "blocking": true,
+     "id": "http_proxy_hermetic",
+     "index": 15
+    },
+    {
+     "blocking": false,
+     "id": "shell_output_edge_whitespace_control",
+     "index": 16
+    },
+    {
+     "blocking": true,
+     "id": "shell_output_edge_whitespace",
+     "index": 17
+    }
+   ],
+   "count": 18,
+   "module": "smoke/mock_cases.py",
+   "name": "mock"
+  },
+  {
+   "cases": [
+    {
+     "blocking": false,
+     "id": "p37_ctl_plain_cmd_chain_runs",
+     "index": 0
+    },
+    {
+     "blocking": true,
+     "id": "network_off_blocks_offline_npm_test",
+     "index": 1
+    },
+    {
+     "blocking": true,
+     "id": "ask_mode_denies_write_and_allows_read",
+     "index": 2
+    },
+    {
+     "blocking": false,
+     "id": "p60_ctl_yolo_both_work",
+     "index": 3
+    },
+    {
+     "blocking": true,
+     "id": "autoreview_blocks_canonical_danger",
+     "index": 4
+    },
+    {
+     "blocking": false,
+     "id": "p46_ctl_yolo_rm_really_deletes",
+     "index": 5
+    },
+    {
+     "blocking": true,
+     "id": "autoedit_blocks_mutable_shell",
+     "index": 6
+    },
+    {
+     "blocking": false,
+     "id": "yolo_mutable_shell_lands_control",
+     "index": 7
+    },
+    {
+     "blocking": true,
+     "id": "hook_blocks_bash_write",
+     "index": 8
+    },
+    {
+     "blocking": false,
+     "id": "hook_absent_bash_write_runs_control",
+     "index": 9
+    },
+    {
+     "blocking": false,
+     "id": "monitor_spawns_command_control",
+     "index": 10
+    },
+    {
+     "blocking": false,
+     "id": "deny_blocks_monitor_spawned_cmd",
+     "index": 11
+    },
+    {
+     "blocking": false,
+     "id": "custom_cmd_at_file_read_fences_control",
+     "index": 12
+    },
+    {
+     "blocking": true,
+     "id": "custom_cmd_at_file_respects_read_fences",
+     "index": 13
+    },
+    {
+     "blocking": false,
+     "id": "blocking_hook_missing_exec_control",
+     "index": 14
+    },
+    {
+     "blocking": true,
+     "id": "blocking_hook_missing_exec_fail_closed",
+     "index": 15
+    }
+   ],
+   "count": 16,
+   "module": "smoke/perm_smoke.py",
+   "name": "perm"
+  },
+  {
+   "cases": [
+    {
+     "blocking": true,
+     "id": "security_review_covers_branch_commits",
+     "index": 0
+    },
+    {
+     "blocking": true,
+     "id": "p30_ctl_security_review_sees_worktree_change",
+     "index": 1
+    },
+    {
+     "blocking": true,
+     "id": "plugin_declared_command_reaches_wire",
+     "index": 2
+    },
+    {
+     "blocking": false,
+     "id": "plugin_toplevel_command_control",
+     "index": 3
+    },
+    {
+     "blocking": false,
+     "id": "child_add_dir_inheritance_control",
+     "index": 4
+    },
+    {
+     "blocking": true,
+     "id": "child_add_dir_inheritance",
+     "index": 5
+    },
+    {
+     "blocking": false,
+     "id": "memory_query_topk_residency_control",
+     "index": 6
+    },
+    {
+     "blocking": true,
+     "id": "memory_query_topk_residency",
+     "index": 7
+    },
+    {
+     "blocking": false,
+     "id": "agent_api_close_retry_incomplete_control",
+     "index": 8
+    },
+    {
+     "blocking": true,
+     "id": "agent_api_close_retry_incomplete",
+     "index": 9
+    },
+    {
+     "blocking": false,
+     "id": "copy_utf8_clipboard_control",
+     "index": 10
+    },
+    {
+     "blocking": true,
+     "id": "copy_utf8_clipboard_bytes",
+     "index": 11
+    },
+    {
+     "blocking": false,
+     "id": "custom_args_single_expansion_control",
+     "index": 12
+    },
+    {
+     "blocking": true,
+     "id": "custom_args_no_secondary_expansion",
+     "index": 13
+    }
+   ],
+   "count": 14,
+   "module": "smoke/state_smoke.py",
+   "name": "state"
+  },
+  {
+   "cases": [
+    {
+     "blocking": true,
+     "id": "glob_finds_inside_control",
+     "index": 0
+    },
+    {
+     "blocking": true,
+     "id": "grep_finds_needle_control",
+     "index": 1
+    },
+    {
+     "blocking": false,
+     "id": "extension_inside_symlink_discovery_control",
+     "index": 2
+    },
+    {
+     "blocking": true,
+     "id": "extension_definition_symlink_outside_fenced",
+     "index": 3
+    },
+    {
+     "blocking": true,
+     "id": "grep_type_filter_ignored",
+     "index": 4
+    },
+    {
+     "blocking": true,
+     "id": "undo_reverts_overwrite_control",
+     "index": 5
+    },
+    {
+     "blocking": true,
+     "id": "rewind_restores_edited_file",
+     "index": 6
+    },
+    {
+     "blocking": true,
+     "id": "notebook_edit_cell_isolation",
+     "index": 7
+    },
+    {
+     "blocking": true,
+     "id": "glob_truncation_keeps_sorted_end",
+     "index": 8
+    },
+    {
+     "blocking": true,
+     "id": "notebook_edit_delete_keeps_neighbors",
+     "index": 9
+    },
+    {
+     "blocking": true,
+     "id": "symlink_to_outside_target_readable_control",
+     "index": 10
+    },
+    {
+     "blocking": true,
+     "id": "p32_ctl_memory_get_reads_inside_workspace",
+     "index": 11
+    },
+    {
+     "blocking": true,
+     "id": "memory_get_abs_path_escapes_workspace",
+     "index": 12
+    },
+    {
+     "blocking": true,
+     "id": "read_via_symlink_outside_workspace_bounded",
+     "index": 13
+    },
+    {
+     "blocking": true,
+     "id": "file_symlink_inside_still_readable_control",
+     "index": 14
+    },
+    {
+     "blocking": true,
+     "id": "grep_default_mode_returns_path_control",
+     "index": 15
+    },
+    {
+     "blocking": true,
+     "id": "grep_head_limit_zero_not_unlimited",
+     "index": 16
+    },
+    {
+     "blocking": true,
+     "id": "read_regular_file_control",
+     "index": 17
+    },
+    {
+     "blocking": true,
+     "id": "read_char_device_bounded",
+     "index": 18
+    }
+   ],
+   "count": 19,
+   "module": "smoke/fileio_smoke.py",
+   "name": "fileio"
+  },
+  {
+   "cases": [
+    {
+     "blocking": true,
+     "id": "startup_broken_config_file",
+     "index": 0
+    },
+    {
+     "blocking": true,
+     "id": "startup_bom_config",
+     "index": 1
+    },
+    {
+     "blocking": false,
+     "id": "launcher_health_control",
+     "index": 2
+    },
+    {
+     "blocking": true,
+     "id": "launcher_python_minimum_fallback",
+     "index": 3
+    },
+    {
+     "blocking": true,
+     "id": "launcher_ambient_python_isolated",
+     "index": 4
+    }
+   ],
+   "count": 5,
+   "module": "smoke/startup_smoke.py",
+   "name": "startup"
+  },
+  {
+   "cases": [
+    {
+     "blocking": false,
+     "id": "headless_p_json_wellformed",
+     "index": 0
+    },
+    {
+     "blocking": true,
+     "id": "headless_p_json_model_error_wellformed",
+     "index": 1
+    },
+    {
+     "blocking": false,
+     "id": "p34_ctl_task_text_reaches_wire",
+     "index": 2
+    },
+    {
+     "blocking": false,
+     "id": "p34_ctl_bare_mention_not_auto_read",
+     "index": 3
+    },
+    {
+     "blocking": true,
+     "id": "at_ref_expands_in_headless",
+     "index": 4
+    },
+    {
+     "blocking": false,
+     "id": "budget_type_domain_control",
+     "index": 5
+    },
+    {
+     "blocking": true,
+     "id": "budget_type_domain",
+     "index": 6
+    },
+    {
+     "blocking": false,
+     "id": "runtime_error_stdout_control",
+     "index": 7
+    },
+    {
+     "blocking": true,
+     "id": "runtime_error_stdout",
+     "index": 8
+    }
+   ],
+   "count": 9,
+   "module": "smoke/headless_smoke.py",
+   "name": "headless"
+  },
+  {
+   "cases": [
+    {
+     "blocking": false,
+     "id": "tui_ctrl_byte_storm_survives",
+     "index": 0
+    },
+    {
+     "blocking": false,
+     "id": "tui_bang_alone_enters_shell_mode",
+     "index": 1
+    },
+    {
+     "blocking": false,
+     "id": "history_workspace_a_fresh_control",
+     "index": 2
+    },
+    {
+     "blocking": false,
+     "id": "history_workspace_b_fresh_control",
+     "index": 3
+    },
+    {
+     "blocking": true,
+     "id": "history_realpath_key",
+     "index": 4
+    }
+   ],
+   "count": 5,
+   "module": "smoke/tui_line.py",
+   "name": "tui_line"
+  }
+ ]
+}

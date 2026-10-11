@@ -1,0 +1,16 @@
+format = "doc2harness.catalog-shard-source/1"
+function_id = "direct"
+resource = "benchmark/harnesses/direct/catalog.toml"
+exports = [
+  { module = "doc2harness.benchmark.harnesses.direct.scenarios.exfil_glob_pem_not_leaked", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.direct.scenarios.http_proxy_hermetic", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.direct.scenarios.http_proxy_hermetic_control", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.direct.scenarios.quality_gate_blocks_completion", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.direct.scenarios.quality_gate_blocks_completion_control", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.direct.scenarios.secret_probe_mechanism_control", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.direct.scenarios.shell_output_edge_whitespace", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.direct.scenarios.shell_output_edge_whitespace_control", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.direct.scenarios.unreferenced_secret_not_in_request_body", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.direct.scenarios.webfetch_http_failure", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.direct.scenarios.webfetch_http_failure_control", export = "definition" },
+]

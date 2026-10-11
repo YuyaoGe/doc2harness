@@ -1,0 +1,37 @@
+format = "doc2harness.taxonomy-source/1"
+
+[[functions]]
+function_id = "artifact"
+title = "Static artifact"
+
+[[functions]]
+function_id = "direct"
+title = "Direct mock process"
+
+[[functions]]
+function_id = "extension"
+title = "Extension discovery counterfactual"
+
+[[functions]]
+function_id = "file"
+title = "Child-process file tools"
+
+[[functions]]
+function_id = "headless"
+title = "Headless CLI behavior"
+
+[[functions]]
+function_id = "permission"
+title = "Child-process permission"
+
+[[functions]]
+function_id = "startup"
+title = "Startup behavior"
+
+[[functions]]
+function_id = "state"
+title = "Child-process state"
+
+[[functions]]
+function_id = "tui"
+title = "TUI PTY behavior"

@@ -1,0 +1,18 @@
+format = "doc2harness.catalog-shard-source/1"
+function_id = "headless"
+resource = "benchmark/harnesses/headless/catalog.toml"
+exports = [
+  { module = "doc2harness.benchmark.harnesses.headless.scenarios.at_ref_expands_in_headless", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.headless.scenarios.budget_type_domain", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.headless.scenarios.budget_type_domain_control", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.headless.scenarios.exec_requires_bg", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.headless.scenarios.exec_requires_bg_control", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.headless.scenarios.headless_p_json_model_error_wellformed", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.headless.scenarios.headless_p_json_wellformed", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.headless.scenarios.p34_ctl_bare_mention_not_auto_read", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.headless.scenarios.p34_ctl_task_text_reaches_wire", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.headless.scenarios.runtime_error_stdout", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.headless.scenarios.runtime_error_stdout_control", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.headless.scenarios.session_flag_subcommand_conflict", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.headless.scenarios.session_flag_subcommand_conflict_control", export = "definition" },
+]

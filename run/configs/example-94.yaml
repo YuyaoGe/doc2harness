@@ -1,0 +1,29 @@
+schema: doc2harness.run-config/1
+
+run:
+  id: example-94
+  output_dir: run-results/example-94
+  concurrency: 2
+  catalog_concurrency: 2
+  catalog_timeout: 900
+  opencode_compression: false
+
+selection:
+  mode: all
+
+# Set this to the reviewed production artifact executor before running.  A
+# blank command is rejected; no previously recorded receipt is substituted.
+executor:
+  command:
+    - python3
+    - run/run_production_executor.py
+
+models:
+  - id: candidate-a
+    artifact_ref: ${CANDIDATE_A_ARTIFACT}
+    env:
+      SBH_ARTIFACT_REF: ${CANDIDATE_A_ARTIFACT}
+  - id: candidate-b
+    artifact_ref: ${CANDIDATE_B_ARTIFACT}
+    env:
+      SBH_ARTIFACT_REF: ${CANDIDATE_B_ARTIFACT}

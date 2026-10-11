@@ -1,0 +1,169 @@
+format = "doc2harness.catalog-root-source/1"
+taxonomy_resource = "benchmark/taxonomy.toml"
+taxonomy_source_digest = "sha256:43b99ad485708c75a6ce93c95669b85bd9c384f03cbff027dfb490cc9df3c779"
+
+[[shards]]
+function_id = "artifact"
+resource = "benchmark/harnesses/artifact/catalog.toml"
+source_digest = "sha256:ab17d776974982aabacdaf55493fedef33225bf9f21ba7f4674a3c3430bf6325"
+semantic_digest = "sha256:e0f2c5d47ad715c4b0e56a6166ae4c2e31138327fe0770721da2b237d1fbbd1c"
+exports = [
+  { module = "doc2harness.benchmark.harnesses.artifact.scenarios.artifact_declares_dependencies", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.artifact.scenarios.artifact_has_entry_py", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.artifact.scenarios.artifact_has_install_sh", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.artifact.scenarios.artifact_has_offline_wheel", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.artifact.scenarios.artifact_has_requirements_lock", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.artifact.scenarios.artifact_has_run_agent_sh", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.artifact.scenarios.artifact_has_version_file", export = "definition" },
+]
+
+[[shards]]
+function_id = "direct"
+resource = "benchmark/harnesses/direct/catalog.toml"
+source_digest = "sha256:b83648161b87b31473c4eaf384b44830a2a9a1a9ed874119c1b6cbe152f66cb7"
+semantic_digest = "sha256:7555e696b9886c9f87c30bbaa01b3afaa0817a9e40e9368841d967e5577db54c"
+exports = [
+  { module = "doc2harness.benchmark.harnesses.direct.scenarios.exfil_glob_pem_not_leaked", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.direct.scenarios.http_proxy_hermetic", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.direct.scenarios.http_proxy_hermetic_control", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.direct.scenarios.quality_gate_blocks_completion", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.direct.scenarios.quality_gate_blocks_completion_control", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.direct.scenarios.secret_probe_mechanism_control", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.direct.scenarios.shell_output_edge_whitespace", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.direct.scenarios.shell_output_edge_whitespace_control", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.direct.scenarios.unreferenced_secret_not_in_request_body", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.direct.scenarios.webfetch_http_failure", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.direct.scenarios.webfetch_http_failure_control", export = "definition" },
+]
+
+[[shards]]
+function_id = "extension"
+resource = "benchmark/harnesses/extension/catalog.toml"
+source_digest = "sha256:78ca3a4f9b32aae12a3f901fa8fe6ba621de830fa0c01319f226743a59d7ecfb"
+semantic_digest = "sha256:1cd6e9811b82411ccd00fa4f43828beff035d9ec9d7e35a1354c75cc92ae7abc"
+exports = [
+  { module = "doc2harness.benchmark.harnesses.extension.scenarios.extension_definition_symlink_outside_fenced", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.extension.scenarios.extension_inside_symlink_discovery_control", export = "definition" },
+]
+
+[[shards]]
+function_id = "file"
+resource = "benchmark/harnesses/file/catalog.toml"
+source_digest = "sha256:7f3ae97eca67f93812bef69a8d591b9d76527593b8c237548d39a1f42939faf5"
+semantic_digest = "sha256:202e42f04f066970a2e65ad02f6b7bea1b86398be2cbcb0183a2dd1a7936bc45"
+exports = [
+  { module = "doc2harness.benchmark.harnesses.file.scenarios.file_symlink_inside_still_readable_control", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.file.scenarios.glob_finds_inside_control", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.file.scenarios.glob_truncation_keeps_sorted_end", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.file.scenarios.grep_default_mode_returns_path_control", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.file.scenarios.grep_finds_needle_control", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.file.scenarios.grep_head_limit_zero_not_unlimited", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.file.scenarios.grep_type_filter_ignored", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.file.scenarios.memory_get_abs_path_escapes_workspace", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.file.scenarios.notebook_edit_cell_isolation", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.file.scenarios.notebook_edit_delete_keeps_neighbors", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.file.scenarios.p32_ctl_memory_get_reads_inside_workspace", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.file.scenarios.read_char_device_bounded", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.file.scenarios.read_regular_file_control", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.file.scenarios.read_via_symlink_outside_workspace_bounded", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.file.scenarios.rewind_restores_edited_file", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.file.scenarios.symlink_to_outside_target_readable_control", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.file.scenarios.undo_reverts_overwrite_control", export = "definition" },
+]
+
+[[shards]]
+function_id = "headless"
+resource = "benchmark/harnesses/headless/catalog.toml"
+source_digest = "sha256:ec48824b157b32c10beab39254d57924756a62069e91c547a89e5f3ae5618704"
+semantic_digest = "sha256:f29ef08c7ea259da1515f99be1860413a083c95f127141c8f25ccefb42567b55"
+exports = [
+  { module = "doc2harness.benchmark.harnesses.headless.scenarios.at_ref_expands_in_headless", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.headless.scenarios.budget_type_domain", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.headless.scenarios.budget_type_domain_control", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.headless.scenarios.exec_requires_bg", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.headless.scenarios.exec_requires_bg_control", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.headless.scenarios.headless_p_json_model_error_wellformed", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.headless.scenarios.headless_p_json_wellformed", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.headless.scenarios.p34_ctl_bare_mention_not_auto_read", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.headless.scenarios.p34_ctl_task_text_reaches_wire", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.headless.scenarios.runtime_error_stdout", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.headless.scenarios.runtime_error_stdout_control", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.headless.scenarios.session_flag_subcommand_conflict", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.headless.scenarios.session_flag_subcommand_conflict_control", export = "definition" },
+]
+
+[[shards]]
+function_id = "permission"
+resource = "benchmark/harnesses/permission/catalog.toml"
+source_digest = "sha256:c515c06dbb8a17857ce86242bd0045a573c6684b4e56e7a1ee4e342980058be4"
+semantic_digest = "sha256:d0cd5ba6de354ad72f8abbc46b7353db084e86325d99b2c26a36bf1a2cfc6b83"
+exports = [
+  { module = "doc2harness.benchmark.harnesses.permission.scenarios.ask_mode_denies_write_and_allows_read", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.permission.scenarios.autoedit_blocks_mutable_shell", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.permission.scenarios.autoreview_blocks_canonical_danger", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.permission.scenarios.blocking_hook_missing_exec_control", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.permission.scenarios.blocking_hook_missing_exec_fail_closed", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.permission.scenarios.custom_cmd_at_file_read_fences_control", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.permission.scenarios.custom_cmd_at_file_respects_read_fences", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.permission.scenarios.deny_blocks_monitor_spawned_cmd", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.permission.scenarios.hook_absent_bash_write_runs_control", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.permission.scenarios.hook_blocks_bash_write", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.permission.scenarios.monitor_spawns_command_control", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.permission.scenarios.network_off_blocks_offline_npm_test", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.permission.scenarios.p37_ctl_plain_cmd_chain_runs", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.permission.scenarios.p46_ctl_yolo_rm_really_deletes", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.permission.scenarios.p60_ctl_yolo_both_work", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.permission.scenarios.yolo_mutable_shell_lands_control", export = "definition" },
+]
+
+[[shards]]
+function_id = "startup"
+resource = "benchmark/harnesses/startup/catalog.toml"
+source_digest = "sha256:9893ae5607570c43319ca2934f2c2eb451276c7cff31fe9496aee84fd4391f20"
+semantic_digest = "sha256:7439429b84748b822599c2bd4a4cbab0270f39c0ececc93eb991d632ebf010c1"
+exports = [
+  { module = "doc2harness.benchmark.harnesses.startup.scenarios.launcher_ambient_python_isolated", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.startup.scenarios.launcher_health_control", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.startup.scenarios.launcher_python_minimum_fallback", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.startup.scenarios.startup_bom_config", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.startup.scenarios.startup_broken_config_file", export = "definition" },
+]
+
+[[shards]]
+function_id = "state"
+resource = "benchmark/harnesses/state/catalog.toml"
+source_digest = "sha256:29d6d7694b1821cd86e0767784ab8fe17851de947a117557acf59bcd60b4b193"
+semantic_digest = "sha256:bfb6dfab995d43d01c912c0c05eb7ef919281e30c16b5009134693fd7679fcdc"
+exports = [
+  { module = "doc2harness.benchmark.harnesses.state.scenarios.agent_api_close_retry_incomplete", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.state.scenarios.agent_api_close_retry_incomplete_control", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.state.scenarios.child_add_dir_inheritance", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.state.scenarios.child_add_dir_inheritance_control", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.state.scenarios.copy_utf8_clipboard_bytes", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.state.scenarios.copy_utf8_clipboard_control", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.state.scenarios.custom_args_no_secondary_expansion", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.state.scenarios.custom_args_single_expansion_control", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.state.scenarios.memory_query_topk_residency", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.state.scenarios.memory_query_topk_residency_control", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.state.scenarios.p30_ctl_security_review_sees_worktree_change", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.state.scenarios.plugin_declared_command_reaches_wire", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.state.scenarios.plugin_toplevel_command_control", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.state.scenarios.security_review_covers_branch_commits", export = "definition" },
+]
+
+[[shards]]
+function_id = "tui"
+resource = "benchmark/harnesses/tui/catalog.toml"
+source_digest = "sha256:33c5b7a874a86ed54b7dd7bef266298e13ad78c0618968fa05c586e20a39e6bd"
+semantic_digest = "sha256:71eb0680a3a71bb9e913bb666c282d30aa43802baca4f3a41c859433acb54a98"
+exports = [
+  { module = "doc2harness.benchmark.harnesses.tui.scenarios.history_realpath_key", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.tui.scenarios.history_workspace_a_fresh_control", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.tui.scenarios.history_workspace_b_fresh_control", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.tui.scenarios.trajectory_autocommit_fail_recorded", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.tui.scenarios.trajectory_autocommit_fail_recorded_control", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.tui.scenarios.trajectory_step_limit_terminal_accurate", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.tui.scenarios.trajectory_step_limit_terminal_accurate_control", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.tui.scenarios.tui_bang_alone_enters_shell_mode", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.tui.scenarios.tui_ctrl_byte_storm_survives", export = "definition" },
+]

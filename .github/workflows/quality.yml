@@ -1,0 +1,133 @@
+name: quality
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  LC_ALL: C.UTF-8
+  PYTHONHASHSEED: "0"
+  SOURCE_DATE_EPOCH: "315532800"
+  TZ: UTC
+
+jobs:
+  clean-wheel:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.12"]
+    steps:
+      - name: Check out source
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          persist-credentials: false
+      - name: Set up Python
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6.3.0
+        with:
+          python-version: ${{ matrix.python-version }}
+          check-latest: false
+      - name: Install hash-locked verification tools
+        env:
+          PIP_DISABLE_PIP_VERSION_CHECK: "1"
+        run: python -m pip install --require-hashes -r requirements/build-tools.txt
+      - name: Build distributions without dependency discovery
+        run: python -m build --no-isolation --sdist --wheel
+      - name: Compile source
+        run: python -m compileall -q src
+      - name: Rebuild the wheel offline from the source distribution
+        shell: bash
+        env:
+          PIP_NO_INDEX: "1"
+        run: |
+          sdist_archive=(dist/*.tar.gz)
+          test "${#sdist_archive[@]}" -eq 1
+          export SDIST_ARCHIVE="${sdist_archive[0]}"
+          export SDIST_UNPACK_ROOT="${RUNNER_TEMP}/sdist-source"
+          python - <<'PY'
+          import os
+          import tarfile
+          from pathlib import Path, PurePosixPath
+
+          archive_path = Path(os.environ["SDIST_ARCHIVE"])
+          destination = Path(os.environ["SDIST_UNPACK_ROOT"])
+          destination.mkdir()
+          with tarfile.open(archive_path, mode="r:gz") as archive:
+              member_names = set()
+              for member in archive.getmembers():
+                  path = PurePosixPath(member.name)
+                  if path.is_absolute() or ".." in path.parts:
+                      raise SystemExit("unsafe source-distribution member")
+                  if path.as_posix() != member.name or member.name in member_names:
+                      raise SystemExit("non-canonical source-distribution member")
+                  member_names.add(member.name)
+                  if member.issym() or member.islnk() or not (
+                      member.isfile() or member.isdir()
+                  ):
+                      raise SystemExit("unsupported source-distribution member type")
+              archive.extractall(destination, filter="data")
+          PY
+          sdist_root="${SDIST_UNPACK_ROOT}/doc2harness-0.0.0"
+          mkdir "${sdist_root}/dist"
+          cp "${SDIST_ARCHIVE}" "${sdist_root}/dist/"
+          python -m build --no-isolation --wheel --outdir "${sdist_root}/dist" "${sdist_root}"
+          cmp dist/*.whl "${sdist_root}/dist/"*.whl
+      - name: Install source-distribution wheel into a clean environment
+        shell: bash
+        run: |
+          python -m venv --without-pip "${RUNNER_TEMP}/installed"
+          python -m pip --python "${RUNNER_TEMP}/installed/bin/python" install \
+            --no-index --no-deps \
+            "${RUNNER_TEMP}/sdist-source/doc2harness-0.0.0/dist/"*.whl
+      - name: Smoke-import the installed wheel
+        shell: bash
+        run: |
+          "${RUNNER_TEMP}/installed/bin/python" -I -c "
+          import doc2harness
+          from doc2harness.benchmark.dispatch import active_scenario_ids
+          ids = active_scenario_ids()
+          print('installed wheel ok, scenarios:', len(ids))
+          assert len(ids) == 94
+          "
+
+  # Verify the catalog from source (the wheel only ships src/doc2harness; stage1
+  # runs from source and is not packaged into the wheel).
+  source-catalog:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.12"]
+    steps:
+      - name: Check out source
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          persist-credentials: false
+      - name: Set up Python
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6.3.0
+        with:
+          python-version: ${{ matrix.python-version }}
+          check-latest: false
+      - name: Verify catalog integrity and size
+        run: |
+          PYTHONPATH=src python - <<'PY'
+          from doc2harness.benchmark.dispatch import active_scenario_ids, load_scenario_owner
+          from collections import Counter
+          ids = active_scenario_ids()
+          families = Counter(
+              load_scenario_owner(i).definition.classification.primary for i in ids
+          )
+          print("scenarios:", len(ids))
+          for name, count in sorted(families.items()):
+              print(f"  {name} {count}")
+          assert len(ids) == 94, f"active catalog changed size: {len(ids)}"
+          assert len(families) == 9, f"family count changed: {sorted(families)}"
+          PY

@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools==84.0.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "doc2harness"
+version = "0.0.0"
+description = "doc2harness: a two-stage benchmark for coding-agent evaluation"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = []
+
+[tool.setuptools]
+include-package-data = false
+
+[tool.setuptools.package-data]
+"doc2harness.benchmark" = ["*.toml", "*.json"]
+"doc2harness.benchmark.harnesses.artifact" = ["catalog.toml"]
+"doc2harness.benchmark.harnesses.direct" = ["catalog.toml"]
+"doc2harness.benchmark.harnesses.extension" = ["catalog.toml"]
+"doc2harness.benchmark.harnesses.file" = ["catalog.toml"]
+"doc2harness.benchmark.harnesses.headless" = ["catalog.toml"]
+"doc2harness.benchmark.harnesses.permission" = ["catalog.toml"]
+"doc2harness.benchmark.harnesses.startup" = ["catalog.toml"]
+"doc2harness.benchmark.harnesses.state" = ["catalog.toml"]
+"doc2harness.benchmark.harnesses.tui" = ["catalog.toml"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["doc2harness*"]
+namespaces = false

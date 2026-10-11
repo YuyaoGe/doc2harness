@@ -1,0 +1,10 @@
+format = "doc2harness.catalog-shard-source/1"
+function_id = "startup"
+resource = "benchmark/harnesses/startup/catalog.toml"
+exports = [
+  { module = "doc2harness.benchmark.harnesses.startup.scenarios.launcher_ambient_python_isolated", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.startup.scenarios.launcher_health_control", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.startup.scenarios.launcher_python_minimum_fallback", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.startup.scenarios.startup_bom_config", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.startup.scenarios.startup_broken_config_file", export = "definition" },
+]

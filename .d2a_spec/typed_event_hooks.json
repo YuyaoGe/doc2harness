@@ -1,0 +1,7 @@
+{
+  "schema": "doc2harness.typed-event-hooks/1",
+  "tool_lifecycle": true,
+  "subprocess": true,
+  "workspace": true,
+  "cleanup": true
+}

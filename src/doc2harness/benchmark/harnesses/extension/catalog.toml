@@ -1,0 +1,7 @@
+format = "doc2harness.catalog-shard-source/1"
+function_id = "extension"
+resource = "benchmark/harnesses/extension/catalog.toml"
+exports = [
+  { module = "doc2harness.benchmark.harnesses.extension.scenarios.extension_definition_symlink_outside_fenced", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.extension.scenarios.extension_inside_symlink_discovery_control", export = "definition" },
+]

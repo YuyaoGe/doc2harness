@@ -1,0 +1,19 @@
+schema: doc2harness.run-config/1
+
+run:
+  id: project-run
+  output_dir: run-results/project-run
+  concurrency: 4
+  opencode_compression: false
+
+selection:
+  mode: all
+
+# The executor is intentionally explicit.  Replace this with the reviewed
+# production executor command; the launcher has no fallback executor.
+executor:
+  command: []
+
+models:
+  - id: configured-model
+    env: {}

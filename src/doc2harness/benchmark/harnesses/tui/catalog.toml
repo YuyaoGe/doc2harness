@@ -1,0 +1,14 @@
+format = "doc2harness.catalog-shard-source/1"
+function_id = "tui"
+resource = "benchmark/harnesses/tui/catalog.toml"
+exports = [
+  { module = "doc2harness.benchmark.harnesses.tui.scenarios.history_realpath_key", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.tui.scenarios.history_workspace_a_fresh_control", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.tui.scenarios.history_workspace_b_fresh_control", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.tui.scenarios.trajectory_autocommit_fail_recorded", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.tui.scenarios.trajectory_autocommit_fail_recorded_control", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.tui.scenarios.trajectory_step_limit_terminal_accurate", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.tui.scenarios.trajectory_step_limit_terminal_accurate_control", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.tui.scenarios.tui_bang_alone_enters_shell_mode", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.tui.scenarios.tui_ctrl_byte_storm_survives", export = "definition" },
+]

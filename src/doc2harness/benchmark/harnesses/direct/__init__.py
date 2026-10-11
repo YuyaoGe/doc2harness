@@ -1,0 +1,61 @@
+"""Typed declarations for direct mock-process scenarios."""
+
+from doc2harness.benchmark.harnesses.direct.contracts import (
+    DirectMockApplicability,
+    DirectMockEntrypoint,
+    DirectMockFixtureProfile,
+    DirectMockJudgement,
+    DirectMockIsolationProfile,
+    DirectMockLocalJudge,
+    DirectMockMode,
+    DirectMockFactKey,
+    DirectMockObservedFact,
+    DirectMockOracleProfile,
+    DirectMockOutcome,
+    DirectMockRawObservation,
+    DirectMockRecipe,
+    DirectMockRequestFact,
+    DirectMockRequiredFlag,
+    DirectMockScenario,
+    define_direct_mock_scenario,
+    apply_direct_mock_local_judge,
+    validate_direct_mock_observation,
+)
+from doc2harness.benchmark.harnesses.direct.adapter import (
+    DirectMockExecutionPlan,
+    build_direct_mock_execution_plan,
+)
+from doc2harness.benchmark.harnesses.direct.fixtures import (
+    DirectMockAction,
+    DirectMockFixtureFile,
+    DirectMockFixturePlan,
+    materialize_direct_mock_fixture,
+)
+
+__all__ = [
+    "DirectMockAction",
+    "DirectMockApplicability",
+    "DirectMockEntrypoint",
+    "DirectMockExecutionPlan",
+    "DirectMockFixtureFile",
+    "DirectMockFixturePlan",
+    "DirectMockFixtureProfile",
+    "DirectMockJudgement",
+    "DirectMockFactKey",
+    "DirectMockIsolationProfile",
+    "DirectMockLocalJudge",
+    "DirectMockMode",
+    "DirectMockObservedFact",
+    "DirectMockOracleProfile",
+    "DirectMockOutcome",
+    "DirectMockRawObservation",
+    "DirectMockRecipe",
+    "DirectMockRequestFact",
+    "DirectMockRequiredFlag",
+    "DirectMockScenario",
+    "build_direct_mock_execution_plan",
+    "apply_direct_mock_local_judge",
+    "define_direct_mock_scenario",
+    "validate_direct_mock_observation",
+    "materialize_direct_mock_fixture",
+]

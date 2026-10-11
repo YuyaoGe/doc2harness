@@ -1,0 +1,21 @@
+format = "doc2harness.catalog-shard-source/1"
+function_id = "permission"
+resource = "benchmark/harnesses/permission/catalog.toml"
+exports = [
+  { module = "doc2harness.benchmark.harnesses.permission.scenarios.ask_mode_denies_write_and_allows_read", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.permission.scenarios.autoedit_blocks_mutable_shell", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.permission.scenarios.autoreview_blocks_canonical_danger", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.permission.scenarios.blocking_hook_missing_exec_control", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.permission.scenarios.blocking_hook_missing_exec_fail_closed", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.permission.scenarios.custom_cmd_at_file_read_fences_control", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.permission.scenarios.custom_cmd_at_file_respects_read_fences", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.permission.scenarios.deny_blocks_monitor_spawned_cmd", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.permission.scenarios.hook_absent_bash_write_runs_control", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.permission.scenarios.hook_blocks_bash_write", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.permission.scenarios.monitor_spawns_command_control", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.permission.scenarios.network_off_blocks_offline_npm_test", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.permission.scenarios.p37_ctl_plain_cmd_chain_runs", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.permission.scenarios.p46_ctl_yolo_rm_really_deletes", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.permission.scenarios.p60_ctl_yolo_both_work", export = "definition" },
+  { module = "doc2harness.benchmark.harnesses.permission.scenarios.yolo_mutable_shell_lands_control", export = "definition" },
+]

@@ -1,0 +1,49 @@
+# Gateway configuration template
+#
+# stage1 drives the builder model through a local OpenAI-compatible gateway.
+# Copy this file, fill in your own endpoint and credentials, and point
+# D2A_STAGE1_CFG at the copy. Do not commit the filled-in version.
+#
+#   cp gateway.example/litellm.config.yaml /your/private/path/litellm.config.yaml
+#   $EDITOR /your/private/path/litellm.config.yaml
+#   export D2A_STAGE1_CFG=/your/private/path/litellm.config.yaml
+#
+# Requirements the pipeline depends on:
+#   * Exactly one model alias named `builder`. OpenCode is configured to see
+#     only this alias (see src/stage1/opencode_profile/opencode.json), which is
+#     what keeps the build model-agnostic: the builder never learns which
+#     upstream model it is.
+#   * The gateway listens on the port passed as --gateway-port (default 4000,
+#     or D2A_GATEWAY_PORT). It must match the baseURL in opencode.json;
+#     run_build fails closed if they disagree.
+#   * master_key is the value the container presents as D2A_GATEWAY_KEY. It is
+#     a local credential, not an upstream one: real provider keys stay in this
+#     file on the host and are never passed into the build container.
+
+model_list:
+  - model_name: builder
+    litellm_params:
+      # Any OpenAI-compatible endpoint. Examples:
+      #   model: openai/gpt-4o             api_base: https://api.openai.com/v1
+      #   model: anthropic/claude-...      api_base: https://api.anthropic.com
+      #   model: openai/<your-model>       api_base: https://<your-host>/v1
+      model: openai/REPLACE_WITH_YOUR_MODEL
+      api_base: https://REPLACE_WITH_YOUR_ENDPOINT/v1
+      api_key: os.environ/YOUR_UPSTREAM_API_KEY
+
+      # Optional. Provider-specific fields go here; leave the block out if your
+      # provider takes none. Reasoning-style models often want something like:
+      # extra_body:
+      #   reasoning_effort: high
+
+      # Optional sampling settings. Keep them identical across every model you
+      # compare, otherwise the comparison measures your sampling choices as
+      # much as the models.
+      # temperature: 1.0
+
+litellm_settings:
+  drop_params: true        # discard params the upstream does not accept
+  request_timeout: 1800    # a build turn can be long; do not cut it short
+
+general_settings:
+  master_key: os.environ/D2A_GATEWAY_KEY

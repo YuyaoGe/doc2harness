@@ -1,0 +1,45 @@
+# Third-party notices
+
+doc2harness evaluates coding-agent products. This file records the upstream work
+it builds on and relates to. It is an attribution record, not a license grant —
+see `LICENSE` for this project's own terms.
+
+## mini-swe-agent
+
+MIT License, Copyright (c) 2025 Kilian A. Lieret and Carlos E. Jimenez
+https://mini-swe-agent.com/ · https://github.com/SWE-agent/mini-swe-agent
+
+stage1 asks a model to build a harness product by implementing a hollowed
+skeleton. That skeleton derives from mini-swe-agent's project layout.
+
+Scope of what is redistributed here: **no mini-swe-agent source code is vendored
+in this repository.** The skeleton at `src/stage1/f0_clean/` is a few small
+files of contract sockets that raise `NotImplementedError`; it carries no upstream
+implementation, and neither image installs mini-swe-agent. A product a builder
+derives from mini-swe-agent remains subject to the MIT license above — anyone
+distributing such a product needs to carry that notice with it.
+
+Note for product builders: the stage1 build prompt instructs the model to
+present the product under its own name and to suppress the upstream startup
+banner. That is an evaluation-fidelity measure (the benchmark observes the
+product's own declared behaviour), not an attempt to obscure provenance. It does
+not remove the MIT attribution obligation, which this notice discharges for the
+benchmark and which a product's own distribution must discharge for itself.
+
+## OpenCode
+
+https://opencode.ai/
+
+The builder image installs the OpenCode CLI binary, which drives the model
+during a stage1 build. It is installed from upstream at image build time under
+its own license; this repository redistributes no OpenCode code. The published
+builder image does contain the binary — consult OpenCode's terms before
+redistributing that image.
+
+## LiteLLM
+
+https://github.com/BerriAI/LiteLLM
+
+Used at runtime as the model gateway. It is a runtime dependency supplied by the
+operator, is not a dependency of the published wheel, and no LiteLLM code is
+redistributed here.

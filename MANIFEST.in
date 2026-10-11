@@ -1,0 +1,12 @@
+include README.md
+include NOTICE
+include LICENSE
+include pyproject.toml
+include .github/workflows/quality.yml
+include requirements/build-tools.txt
+include requirements/run.txt
+recursive-include src/doc2harness *.py *.toml
+recursive-include run *.sh *.py *.yaml *.md
+prune containers
+global-exclude *.py[cod]
+global-exclude .DS_Store
