@@ -6,7 +6,7 @@
 
 <p align="center">
   <a href="https://geyuyao.com/doc2harness/"><img src="https://img.shields.io/badge/Project-Page-0055E9?logo=googlechrome&logoColor=white" alt="Project Page"></a>
-  <img src="https://img.shields.io/badge/Paper-coming%20soon-b31b1b?logo=arxiv" alt="Paper (coming soon)">
+  <a href="https://arxiv.org/abs/2610.20344"><img src="https://img.shields.io/badge/arXiv-2610.20344-b31b1b?logo=arxiv" alt="arXiv:2610.20344"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-Apache%202.0-green" alt="License"></a>
   <img src="https://img.shields.io/badge/Python-3.11%2B-3776AB?logo=python&logoColor=white" alt="Python 3.11+">
   <img src="https://img.shields.io/badge/deps-stdlib%20only-success" alt="stdlib only">
@@ -16,9 +16,11 @@
 
 <p align="center">
   <a href="https://geyuyao.com/doc2harness/">🌐 Website</a> •
+  <a href="https://arxiv.org/abs/2610.20344">📄 Paper</a> •
   <a href="#-quick-start">⚡ Quick start</a> •
   <a href="#-scenario-catalog">🧪 Scenarios</a> •
-  <a href="#-leaderboard">🏆 Leaderboard</a>
+  <a href="#-leaderboard">🏆 Leaderboard</a> •
+  <a href="#-citation">📝 Citation</a>
 </p>
 
 ---
@@ -145,6 +147,22 @@ tools/             run_production_catalog.py — score a product
 run/               YAML-driven launchers
 containers/        evaluation image
 assets/            figures for this README
+```
+
+## 📝 Citation
+
+If you find Doc2Harness useful, please cite the
+[paper](https://arxiv.org/abs/2610.20344):
+
+```bibtex
+@article{ge2026doc2harness,
+  title   = {Doc2Harness: Benchmarking LLMs on Long-Horizon Harness Engineering of Coding Agents},
+  author  = {Ge, Yuyao and Liu, Shenghua and Gao, Peizhong and Ge, Chendi and Liu, Chenxu and
+             Wang, Yiwei and Mei, Lingrui and Bi, Baolong and Yao, Jiayu and Guo, Jiafeng and
+             Cheng, Xueqi},
+  journal = {arXiv preprint arXiv:2610.20344},
+  year    = {2026}
+}
 ```
 
 ## 🙏 Acknowledgments
