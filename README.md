@@ -7,6 +7,7 @@
 <p align="center">
   <a href="https://geyuyao.com/doc2harness/"><img src="https://img.shields.io/badge/Project-Page-0055E9?logo=googlechrome&logoColor=white" alt="Project Page"></a>
   <a href="https://arxiv.org/abs/2610.20344"><img src="https://img.shields.io/badge/arXiv-2610.20344-b31b1b?logo=arxiv" alt="arXiv:2610.20344"></a>
+  <a href="https://huggingface.co/datasets/YuyaoGe/doc2harness"><img src="https://img.shields.io/badge/Hugging%20Face-Dataset-FFD21E?logo=huggingface&logoColor=black" alt="Hugging Face Dataset"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-Apache%202.0-green" alt="License"></a>
   <img src="https://img.shields.io/badge/Python-3.11%2B-3776AB?logo=python&logoColor=white" alt="Python 3.11+">
   <img src="https://img.shields.io/badge/deps-stdlib%20only-success" alt="stdlib only">
@@ -17,6 +18,7 @@
 <p align="center">
   <a href="https://geyuyao.com/doc2harness/">🌐 Website</a> •
   <a href="https://arxiv.org/abs/2610.20344">📄 Paper</a> •
+  <a href="https://huggingface.co/datasets/YuyaoGe/doc2harness">🤗 Dataset</a> •
   <a href="#-quick-start">⚡ Quick start</a> •
   <a href="#-scenario-catalog">🧪 Scenarios</a> •
   <a href="#-leaderboard">🏆 Leaderboard</a> •
